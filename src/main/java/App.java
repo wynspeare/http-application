@@ -11,16 +11,16 @@ public class App {
 
   public static void main(String[] args) {
     httpServer = new HTTPServer();
-    start();
+    try {
+      start();
+    } finally {
+      httpServer.close();
+    }
   }
 
   public static void start() {
     Router router = createRouter();
-    try {
       httpServer.serve(router);
-    } finally {
-      httpServer.close();
-    }
   }
 
   public static Router createRouter() {
