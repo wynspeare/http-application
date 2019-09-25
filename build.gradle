@@ -12,4 +12,11 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation files('../httpServer/build/libs/httpServer-1.0-SNAPSHOT.jar')
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'App'
+    }
 }
