@@ -32,8 +32,6 @@ public class App {
     router.addRoute("POST", "/echo_body", new EchoHandler());
     router.addRoute("GET", "/redirect", new RedirectHandler("http://127.0.0.1:5000/simple_get"));
     router.addRoute("GET", "/test", new DefaultHandler());
-
     return router;
   }
-
 }
