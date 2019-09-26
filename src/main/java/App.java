@@ -7,26 +7,17 @@ import server.handlers.RedirectHandler;
 import static server.HTTPServer.serverLogger;
 
 public class App {
-  private static HTTPServer server;
-
-  public App(HTTPServer httpServer) {
-    this.server = httpServer;
-  }
+  private static int defaultPort = 5000;
 
   public static void main(String[] args) {
     HTTPServer httpServer = new HTTPServer();
-    App app = new App(httpServer);
-    System.out.println(app.server.serverSocket);
-//    try {
-      start(app);
-//    } finally {
-//      httpServer.close();
-//    }
+    httpServer.buildServerSocket(defaultPort);
+    start(httpServer);
   }
 
-  public static void start(App app) {
+  public static void start(HTTPServer server) {
     Router router = createRouter();
-      app.server.serve(router);
+    server.serve(router);
   }
 
   public static Router createRouter() {

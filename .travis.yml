@@ -3,6 +3,6 @@ language: java
 jdk: openjdk11
 
 script:
-  - "./build-server.sh"
-  - java -jar build/libs/httpApplication-1.0-SNAPSHOT.jar &
+  - java -jar build/libs/httpApplication-1.0-SNAPSHOT.jar 5000 &
+  -
   - "./acceptance-tests.sh"
