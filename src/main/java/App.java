@@ -3,9 +3,7 @@ import server.Router;
 import server.handlers.DefaultHandler;
 import server.handlers.EchoHandler;
 import server.handlers.RedirectHandler;
-import server.logger.ServerLogger;
-
-//import static server.HTTPServer.serverLogger;
+import logger.ServerLogger;
 
 public class App {
   private static int defaultPort = 5000;
@@ -23,6 +21,7 @@ public class App {
 
   public static void start(HTTPServer server) {
     Router router = createRouter();
+    System.out.println(serverLogger);
     server.serve(router);
   }
 

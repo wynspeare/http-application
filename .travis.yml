@@ -3,6 +3,5 @@ language: java
 jdk: openjdk11
 
 script:
-  - java -jar dependencies/httpServer-1.0-SNAPSHOT.jar &
   - java -jar build/libs/httpApplication-1.0-SNAPSHOT.jar &
   - "./acceptance-tests.sh"
