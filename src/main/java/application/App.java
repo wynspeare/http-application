@@ -1,9 +1,10 @@
+package application;
+
 import server.HTTPServer;
 import server.Router;
 import server.handlers.DefaultHandler;
 import server.handlers.EchoHandler;
 import server.handlers.RedirectHandler;
-import logger.ServerLogger;
 
 public class App {
   private static int defaultPort = 5000;
@@ -15,16 +16,9 @@ public class App {
   public static void main(String[] args) {
     HTTPServer httpServer = new HTTPServer();
     httpServer.buildServerSocket(defaultPort);
-
     Router router = createRouter();
     httpServer.serve(router);
-//    start(httpServer);
   }
-//
-//  public void start(HTTPServer server) {
-//    Router router = createRouter();
-//    server.serve(router);
-//  }
 
   public static Router createRouter() {
     ServerLogger serverLogger = createLogger("Logs");

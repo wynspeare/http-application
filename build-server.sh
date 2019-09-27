@@ -4,3 +4,4 @@ wget https://github.com/wynspeare/http-server/archive/make-server-dependent.tar.
 tar -xzvf make-server-dependent.tar.gz
 cd http-server-make-server-dependent && ./gradlew build
 cd ..
+

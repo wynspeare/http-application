@@ -1,4 +1,4 @@
-package logger;
+package application;
 
 import server.logger.ILogger;
 
@@ -12,7 +12,7 @@ public class ServerLogger implements ILogger {
   private Logger logger;
 
   public ServerLogger(String directoryLocation){
-    logger = Logger.getLogger(logger.ServerLogger.class.getName());
+    logger = Logger.getLogger(application.ServerLogger.class.getName());
     makeLogDirectory(directoryLocation);
 
     try {
@@ -20,7 +20,7 @@ public class ServerLogger implements ILogger {
       fileHandler.setFormatter(new SimpleFormatter());
       logger.addHandler(fileHandler);
     } catch (Exception e) {
-      logger.warning("Failed to initialize logger handler");
+      logger.warning("Failed to initialize application.logger handler");
     }
   }
 
