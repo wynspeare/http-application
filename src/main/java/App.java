@@ -7,7 +7,6 @@ import logger.ServerLogger;
 
 public class App {
   private static int defaultPort = 5000;
-  public static final ServerLogger serverLogger = createLogger("Logs");
 
   public static ServerLogger createLogger(String directory) {
     return new ServerLogger(directory);
@@ -16,16 +15,20 @@ public class App {
   public static void main(String[] args) {
     HTTPServer httpServer = new HTTPServer();
     httpServer.buildServerSocket(defaultPort);
-    start(httpServer);
-  }
 
-  public static void start(HTTPServer server) {
     Router router = createRouter();
-    System.out.println(serverLogger);
-    server.serve(router);
+    httpServer.serve(router);
+//    start(httpServer);
   }
+//
+//  public void start(HTTPServer server) {
+//    Router router = createRouter();
+//    server.serve(router);
+//  }
 
   public static Router createRouter() {
+    ServerLogger serverLogger = createLogger("Logs");
+    System.out.println(serverLogger);
     Router router = new Router(serverLogger);
 
     router.addRoute("GET", "/simple_get", new DefaultHandler());
