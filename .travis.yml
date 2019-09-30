@@ -1,0 +1,9 @@
+os: osx
+language: java
+jdk: openjdk11
+
+script:
+  - "./get-server-jar.sh"
+  - java -cp httpApplication-1.0-SNAPSHOT.jar:build/libs/*:. application.App & MyPID=$!
+  - "./acceptance-tests.sh"
+  - kill $MyPID

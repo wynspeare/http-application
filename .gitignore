@@ -94,6 +94,7 @@ modules.xml
 
 # Log file
 *.log
+/Logs
 
 # BlueJ files
 *.ctxt
@@ -102,7 +103,7 @@ modules.xml
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.nar
 *.ear
@@ -115,7 +116,13 @@ hs_err_pid*
 
 ### Gradle ###
 .gradle
-build/
+build/classes
+build/generated
+build/reports
+build/test-results
+build/tmp
+build/.DS_Store
+build/libs/.DS_Store
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -130,6 +137,6 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 ### Gradle Patch ###
-**/build/
+#**/build/
 
 # End of https://www.gitignore.io/api/java,gradle,intellij+all
