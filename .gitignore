@@ -122,6 +122,7 @@ build/reports
 build/test-results
 build/tmp
 build/.DS_Store
+build/libs/.DS_Store
 
 # Ignore Gradle GUI config
 gradle-app.setting

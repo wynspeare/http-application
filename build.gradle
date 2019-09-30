@@ -13,7 +13,6 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation files('build/libs/httpServer-1.0-SNAPSHOT.jar')
-//    implementation files('../http-server-make-server-dependent/build/libs/httpServer-1.0-SNAPSHOT.jar')
 }
 
 jar {
